@@ -97,11 +97,11 @@ header {
 
 .fa-bars.active,
 .fa-x {
-  display: none;
+  display: none !important;
 }
 
 .fa-x.active {
-  display: block;
+  display: block !important;
 }
 
 .menu-overlay {
