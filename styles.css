@@ -682,6 +682,14 @@ textarea:focus {
     flex-direction: column;
   }
 
+  #app_txt {
+    order: 2;
+  }
+
+  #app_img {
+    order: 1;
+  }
+
   .app_img {
     width: 100%;
     max-height: 300px;
