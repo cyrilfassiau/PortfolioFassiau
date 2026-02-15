@@ -662,7 +662,7 @@ textarea:focus {
     align-items: flex-start;
     gap: 0;
     padding: 100px 30px 30px;
-    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: right 0.4s linear;
     z-index: 1000;
     overflow-y: auto;
   }
