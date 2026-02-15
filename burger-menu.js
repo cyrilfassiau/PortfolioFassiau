@@ -4,11 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('.main-nav');
   const overlay = document.querySelector('.menu-overlay');
   const navLinks = document.querySelectorAll('.nav-link');
+  const fax = document.querySelector(".fa-x");
+  const fabars = document.querySelector(".fa-bars");
   const body = document.body;
 
   // Fonction pour ouvrir le menu
   function openMenu() {
     burgerBtn.classList.add('active');
+    fax.classList.add('active');
+    fabars.classList.add('active');
     nav.classList.add('active');
     overlay.classList.add('active');
     body.classList.add('menu-open');
@@ -19,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeMenu() {
     burgerBtn.classList.remove('active');
     nav.classList.remove('active');
+    fax.classList.remove('active');
+    fabars.classList.remove('active');
     overlay.classList.remove('active');
     body.classList.remove('menu-open');
     burgerBtn.setAttribute('aria-expanded', 'false');
