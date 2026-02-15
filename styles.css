@@ -11,6 +11,73 @@ body {
   overflow-x: hidden;
 }
 
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+}
+
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #1e293b;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+}
+
+/* Animation du burger en X quand le menu est ouvert */
+.burger-menu.active .burger-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Overlay sombre quand le menu est ouvert */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Navigation mobile */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 50px;
+  height: 80px;
+  width: 100%;
+}
+
 /* Container principal pour toutes les sections */
 .container {
   max-width: 1200px;
@@ -496,8 +563,42 @@ textarea:focus {
 /* ============================================
    RESPONSIVE MEDIA QUERIES
    ============================================ */
+@media screen and (min-width: 1025px) {
+  .burger-menu {
+    display: none !important;
+  }
 
-/* Tablets and below (1024px) */
+  .menu-overlay {
+    display: none !important;
+  }
+
+  .main-nav {
+    position: static !important;
+    right: auto !important;
+    width: auto !important;
+    height: 80px !important;
+    flex-direction: row !important;
+    gap: 50px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .main-nav span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .main-nav .nav-link {
+    padding: 0 !important;
+    font-size: 16px !important;
+  }
+
+  .main-nav .nav-link::before {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header,
   .hero,
@@ -505,6 +606,10 @@ textarea:focus {
   .applications,
   .contact_box {
     padding: 0 20px;
+  }
+
+  .header {
+    justify-content: space-between;
   }
 
   .works {
@@ -538,6 +643,105 @@ textarea:focus {
 
   .apps_boxes {
     gap: 60px;
+  }
+  .burger-menu {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    max-width: 80%;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    padding: 100px 30px 30px;
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav span {
+    width: 100%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.3s ease;
+  }
+
+  /* Animation en cascade des liens */
+  .main-nav.active span {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .main-nav.active span:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .main-nav.active span:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .main-nav.active span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .main-nav.active span:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .main-nav .nav-link {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Effet au survol */
+  .main-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6, #2563eb);
+    transform: translateX(-4px);
+    transition: transform 0.3s ease;
+  }
+
+  .main-nav .nav-link:hover::before,
+  .main-nav .nav-link:active::before {
+    transform: translateX(0);
+  }
+
+  .main-nav .nav-link:hover,
+  .main-nav .nav-link:active {
+    background-color: rgba(59, 130, 246, 0.08);
+    color: #3b82f6;
+    padding-left: 28px;
+  }
+
+  /* Empêcher le scroll du body quand le menu est ouvert */
+  body.menu-open {
+    overflow: hidden;
   }
 }
 
@@ -635,6 +839,32 @@ textarea:focus {
 
   .contact_box_left > p {
     margin-bottom: 20px;
+  }
+  .burger-menu {
+    width: 28px;
+    height: 28px;
+  }
+
+  .burger-line {
+    height: 2.5px;
+  }
+
+  .burger-menu.active .burger-line:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .burger-menu.active .burger-line:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  .main-nav {
+    width: 260px;
+    padding: 90px 25px 25px;
+  }
+
+  .main-nav .nav-link {
+    font-size: 16px;
+    padding: 16px 18px;
   }
 }
 
@@ -803,6 +1033,32 @@ textarea:focus {
   .contact_box_right > form > button {
     height: 48px;
     font-size: 14px;
+  }
+  .burger-menu {
+    width: 26px;
+    height: 26px;
+  }
+
+  .burger-line {
+    height: 2px;
+  }
+
+  .burger-menu.active .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .burger-menu.active .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav {
+    width: 240px;
+    padding: 80px 20px 20px;
+  }
+
+  .main-nav .nav-link {
+    font-size: 15px;
+    padding: 14px 16px;
   }
 }
 

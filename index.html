@@ -1,22 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="burger-menu.css" />
     <script src="main.js" defer></script>
+    <script src="burger-menu.js" defer></script>
     <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/ca71dbf907.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/ca71dbf907.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
@@ -30,159 +31,209 @@
     <header>
       <div class="header">
         <div class="nom">Cyril Fassiau</div>
-        <nav>
-          <span><a href="#heroo" class="heroo">Accueil</a></span>
-          <span><a href="#projectss" class="solutions">Sites Web</a></span>
-          <span><a href="#apps" class="doss">Applications</a></span>
-          
-          <span><a href="#contact" class="processs">Contact</a></span>
+
+        <!-- Menu burger button (visible on mobile/tablet) -->
+        <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+
+        <!-- Navigation desktop et mobile -->
+        <nav class="main-nav">
+          <span><a href="#heroo" class="nav-link heroo">Accueil</a></span>
+          <span
+            ><a href="#projectss" class="nav-link solutions">Sites Web</a></span
+          >
+          <span><a href="#apps" class="nav-link doss">Applications</a></span>
+          <span><a href="#contact" class="nav-link processs">Contact</a></span>
         </nav>
       </div>
     </header>
+
+    <!-- Overlay pour fermer le menu en cliquant à l'extérieur -->
+    <div class="menu-overlay"></div>
+
     <main>
-    <section class="hero" id="heroo">
-      <img src="images/CyrilFassiau.jpg" class="myHead" />
-      <div class="heroText">
-        <h1>
-          Développeur front-end
-        </h1>
-        <span>Développement HTML/CSS/JavaScript/React</span>
-        <span></span>
-        <span>Ouvert à de nouvelles collaborations</span>
-        <div class="boutons"><button class="explore">Explorez mes travaux</button> <button class="discuss">Discutons</button></div>
-      </div>
-     
-    </section>
-     <section class="projects" id="projectss">
-      <p>Portfolio</p>
-      <h1>Sites Web</h1>
-      <div class="works">
-      <a href="https://www.fassiaupolymerconsulting.com" target="_blank" class="work_link">
-        <div class="work">
-        
-         <div class="image_box">
-          
-
-            <img src="images/fassiau_website.png" class="work-image" />
-          </div>
-      <div class="work_bottom">
-      <div class="lang_box">
-      <div class="languages"><span>HTML</span></div>
-      <div class="languages"><span>CSS</span></div>
-      
-      </div>  
-      <div class="work_title">Fassiau Polymer Consulting</div>
-      <div class="work_text">
-          <span>Site vitrine pour un consultant en thermoplastiques.</span>
-        </div></div>
-      </div>
-      </a>
-      <a href="https://cyrilfassiau.github.io/Evasia-Vitrine/" target="_blank" class="work_link"><div class="work">
-        
-         <div class="image_box">
-          
-
-            <img src="images/evasia_website.png" class="work-image" />
-          </div>
-      <div class="work_bottom">
-      <div class="lang_box">
-      <div class="languages"><span>HTML</span></div>
-      <div class="languages"><span>CSS</span></div>
-      <div class="languages"><span>JS</span></div>
-      <div class="languages"><span>REACT</span></div>
-      </div>  
-      <div class="work_title">Evasia</div>
-      <div class="work_text">
-          <span>Site pour l'agence de voyage à Bali <b>Evasia</b>. Incluant un système d'authentification ainsi qu'un espace utilisateur pour les clients. </span>
-        </div></div>
-      </div>
-      </a>
-      <a href="https://cyrilfassiau.github.io/Test_booki/" target="_blank" class="work_link">
-
-      <div class="work">
-        
-         <div class="image_box">
-          
-
-            <img src="images/booki_website.png" class="work-image" />
-          </div>
-      <div class="work_bottom">
-      <div class="lang_box">
-      <div class="languages"><span>HTML</span></div>
-      <div class="languages"><span>CSS</span></div>
-      <div class="languages"><span>JS</span></div>
-      </div>  
-      <div class="work_title">Booki</div>
-      <div class="work_text">
-          <span>Site de réservation d'hébergements de vacances <b>Booki</b></span>
-        </div></div>
-      </div>
-      </a>
-      </div>
-     
-    </section>
-    <section class="apps" id="apps">
-      <div class="applications">
-      <span>Full Stack</span>
-      <h1>Applications</h1>
-      <div class="apps_boxes">
-        <div class="app">
-          <img src="images/weatherapp.png" class="app_img">
-          <div class="app_txt">
-            <h1>Weather App</h1>
-            <span>Application de météo en temps réel avec barre de recherche et localisation automatique, utilisant l'API <b><i>OpenWeatherMap</i></b>.</span>
-            
-           <button onclick="window.open('https://cyrilfassiau.github.io/weatherapp/', '_blank')">
-  Lancer
-</button>
+      <section class="hero" id="heroo">
+        <img src="images/CyrilFassiau.jpg" class="myHead" />
+        <div class="heroText">
+          <h1>Développeur front-end</h1>
+          <span>Développement HTML/CSS/JavaScript/React</span>
+          <span></span>
+          <span>Ouvert à de nouvelles collaborations</span>
+          <div class="boutons">
+            <button class="explore">Explorez mes travaux</button>
+            <button class="discuss">Discutons</button>
           </div>
         </div>
-        <div class="app">
-           <div class="app_txt">
-            <h1>Base de données</h1>
-            <span>Une application permettant de rassembler des projets dans une base de données pour les classer.</span>
-            <ul>
-              <li>Sécurisée par une authentification à mot de passe</li>
-              <li>Utilisation d'une base de données Supabase</li>
-              <li>Système de filtration en fonction de l'état d'avencement du projet</li>
-            </ul>
-            <button onclick="window.open('https://cyrilfassiau.github.io/IPdatabase/', '_blank')">
-  Lancer
-</button>
-          </div>
-          <img src="images/dattabase_app.png" class="app_img">
-         
+      </section>
+      <section class="projects" id="projectss">
+        <p>Portfolio</p>
+        <h1>Sites Web</h1>
+        <div class="works">
+          <a
+            href="https://www.fassiaupolymerconsulting.com"
+            target="_blank"
+            class="work_link"
+          >
+            <div class="work">
+              <div class="image_box">
+                <img src="images/fassiau_website.png" class="work-image" />
+              </div>
+              <div class="work_bottom">
+                <div class="lang_box">
+                  <div class="languages"><span>HTML</span></div>
+                  <div class="languages"><span>CSS</span></div>
+                </div>
+                <div class="work_title">Fassiau Polymer Consulting</div>
+                <div class="work_text">
+                  <span
+                    >Site vitrine pour un consultant en thermoplastiques.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://cyrilfassiau.github.io/Evasia-Vitrine/"
+            target="_blank"
+            class="work_link"
+            ><div class="work">
+              <div class="image_box">
+                <img src="images/evasia_website.png" class="work-image" />
+              </div>
+              <div class="work_bottom">
+                <div class="lang_box">
+                  <div class="languages"><span>HTML</span></div>
+                  <div class="languages"><span>CSS</span></div>
+                  <div class="languages"><span>JS</span></div>
+                  <div class="languages"><span>REACT</span></div>
+                </div>
+                <div class="work_title">Evasia</div>
+                <div class="work_text">
+                  <span
+                    >Site pour l'agence de voyage à Bali <b>Evasia</b>. Incluant
+                    un système d'authentification ainsi qu'un espace utilisateur
+                    pour les clients et un espace administrateur pour l'agence.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://cyrilfassiau.github.io/Test_booki/"
+            target="_blank"
+            class="work_link"
+          >
+            <div class="work">
+              <div class="image_box">
+                <img src="images/booki_website.png" class="work-image" />
+              </div>
+              <div class="work_bottom">
+                <div class="lang_box">
+                  <div class="languages"><span>HTML</span></div>
+                  <div class="languages"><span>CSS</span></div>
+                  <div class="languages"><span>JS</span></div>
+                </div>
+                <div class="work_title">Booki</div>
+                <div class="work_text">
+                  <span
+                    >Site de réservation d'hébergements de vacances
+                    <b>Booki</b></span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
-      </div>
-</div>
-    </section>
-    <section class="contact" id="contact">
-      <div class="contact_box">
-        <div class="contact_box_left">
-          <span>CONTACT</span>
-          <h1>Contactez-moi</h1>
-          <p>Je suis ouvert pour discuter de nouvelle opportunités.</p>
-          <div class="mailoc"><i class="fa-solid fa-envelope"></i>cyril.fassiau@hotmail.com</div>
-          <div class="mailoc"><i class="fa-solid fa-location-arrow"></i>Saint-Amand, Belgique</div>
+      </section>
+      <section class="apps" id="apps">
+        <div class="applications">
+          <span>Full Stack</span>
+          <h1>Applications</h1>
+          <div class="apps_boxes">
+            <div class="app">
+              <img src="images/weatherapp.png" class="app_img" />
+              <div class="app_txt">
+                <h1>Weather App</h1>
+                <span
+                  >Application de météo en temps réel avec barre de recherche et
+                  localisation automatique, utilisant l'API
+                  <b><i>OpenWeatherMap</i></b
+                  >.</span
+                >
 
+                <button
+                  onclick="
+                    window.open(
+                      'https://cyrilfassiau.github.io/weatherapp/',
+                      '_blank',
+                    )
+                  "
+                >
+                  Lancer
+                </button>
+              </div>
+            </div>
+            <div class="app">
+              <div class="app_txt">
+                <h1>Base de données</h1>
+                <span
+                  >Une application permettant de rassembler des projets dans une
+                  base de données pour les classer.</span
+                >
+                <ul>
+                  <li>Sécurisée par une authentification à mot de passe</li>
+                  <li>Utilisation d'une base de données Supabase</li>
+                  <li>
+                    Système de filtration en fonction de l'état d'avencement du
+                    projet
+                  </li>
+                </ul>
+                <button
+                  onclick="
+                    window.open(
+                      'https://cyrilfassiau.github.io/IPdatabase/',
+                      '_blank',
+                    )
+                  "
+                >
+                  Lancer
+                </button>
+              </div>
+              <img src="images/dattabase_app.png" class="app_img" />
+            </div>
+          </div>
         </div>
-        <div class="contact_box_right">
-          <form>
-            <label>Nom</label>
-            <input type="text" placeholder="Votre nom"  />
-            <label>Email</label>
-      <input type="email" placeholder="Email" />
-			
-			<label>Message</label>
-          <textarea rows="6" placeholder="Message"></textarea>
-			<button>Envoyer</button>
-          </form>
+      </section>
+      <section class="contact" id="contact">
+        <div class="contact_box">
+          <div class="contact_box_left">
+            <span>CONTACT</span>
+            <h1>Contactez-moi</h1>
+            <p>Je suis ouvert pour discuter de nouvelle opportunités.</p>
+            <div class="mailoc">
+              <i class="fa-solid fa-envelope"></i>cyril.fassiau@hotmail.com
+            </div>
+            <div class="mailoc">
+              <i class="fa-solid fa-location-arrow"></i>Saint-Amand, Belgique
+            </div>
+          </div>
+          <div class="contact_box_right">
+            <form>
+              <label>Nom</label>
+              <input type="text" placeholder="Votre nom" />
+              <label>Email</label>
+              <input type="email" placeholder="Email" />
+
+              <label>Message</label>
+              <textarea rows="6" placeholder="Message"></textarea>
+              <button>Envoyer</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
-    
-    
-  </body>
-</html>
+      </section>
+    </main>
   </body>
 </html>
