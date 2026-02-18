@@ -130,7 +130,7 @@ header {
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -536,6 +536,71 @@ textarea:focus {
 
 .contact_box_right > form > button:hover {
   transform: translateY(-2px);
+}
+
+.video {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.video > p {
+  color: #64748b;
+  font-size: 1.2rem;
+  margin: auto;
+  width: 70%;
+}
+
+.video > span {
+  color: #4c99e6;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  margin-top: 50px;
+}
+video[poster] {
+  object-fit: cover;
+}
+
+.about {
+  width: 100%;
+  margin: auto;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
+.aboutFlex > span {
+  color: #4c99e6;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.aboutFlex {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.aboutP {
+  color: #64748b;
+  font-size: 1.25rem;
+  margin: auto;
 }
 
 @media screen and (min-width: 1025px) {
