@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (exploreBtn) {
     exploreBtn.addEventListener('click', function() {
-      const projectsSection = document.getElementById('projectss');
+      const projectsSection = document.getElementById('apps');
       if (projectsSection) {
         const headerHeight = document.querySelector('header').offsetHeight;
         const targetPosition = projectsSection.offsetTop - headerHeight;
@@ -116,18 +116,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  if (discussBtn) {
-    discussBtn.addEventListener('click', function() {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = contactSection.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
+  
 });
