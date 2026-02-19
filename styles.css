@@ -393,10 +393,18 @@ header {
   box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.25);
 }
 
+.perspective {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.0);
+}
+
 .app_img {
   width: 60%;
   object-fit: cover;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
 
 .app_txt {
   width: 40%;
