@@ -1,6 +1,4 @@
-/* =========================================
-   GLOBAL
-========================================= */
+
 
 :root {
   --bg: #f6f7f8;
@@ -39,6 +37,7 @@
 html {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
+  overscroll-behavior: none;
 }
 
 body {
@@ -48,6 +47,13 @@ body {
   overflow-x: hidden;
   background-color: var(--bg);
   color: var(--text);
+}
+
+footer {
+  background-color: #f0f0f0;
+  text-align: center
+  ;
+  width: 100%;
 }
 
 body.menu-open {
@@ -68,7 +74,7 @@ video {
   padding: 0 20px;
 }
 
-/* évite que le header fixe masque les ancres */
+
 section {
   scroll-margin-top: calc(var(--header-h) + 20px);
 }
@@ -388,7 +394,12 @@ header {
   flex-wrap: wrap;
 }
 
-.app_txt > button {
+.gitBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gitBtn > button {
   width: 140px;
   height: 46px;
   border-radius: 12px;
@@ -1003,6 +1014,10 @@ textarea:focus {
   }
 
   .heroText > span {
+    font-size: 0.95rem;
+  }
+
+  .aboutP > p{
     font-size: 0.95rem;
   }
 
