@@ -233,7 +233,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 650px;
+  max-width: 1200px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -552,7 +552,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 200px 0;
+  margin: 100px 0;
 }
 
 .video {
@@ -560,7 +560,6 @@ header {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
 }
 
 .video > span {
@@ -572,10 +571,8 @@ header {
 
 .video > p,
 .video > a {
-  color: var(--muted);
   font-size: 1.2rem;
-  margin: 0 auto;
-  width: min(70%, 900px);
+
   line-height: 1.6;
 }
 
@@ -596,6 +593,31 @@ video[poster] {
   object-fit: cover;
 }
 
+.artContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.threeDBtn {
+  height: 58px;
+  border-radius: 23px;
+  border: none;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: var(--shadow-blue);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 20px 20px;
+}
+
 /* =========================================
    ABOUT
 ========================================= */
@@ -608,7 +630,7 @@ video[poster] {
 
 .aboutFlex {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -627,9 +649,9 @@ video[poster] {
 
 .aboutP {
   color: var(--muted);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 /* =========================================
