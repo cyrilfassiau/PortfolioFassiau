@@ -1,5 +1,3 @@
-
-
 :root {
   --bg: #f6f7f8;
   --panel: rgba(255, 255, 255, 0.82);
@@ -51,8 +49,7 @@ body {
 
 footer {
   background-color: #f0f0f0;
-  text-align: center
-  ;
+  text-align: center;
   width: 100%;
 }
 
@@ -73,7 +70,6 @@ video {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 
 section {
   scroll-margin-top: calc(var(--header-h) + 20px);
@@ -399,7 +395,8 @@ header {
   justify-content: space-between;
 }
 
-.gitBtn > button {
+.gitBtn > button,
+.gitBtn > a {
   width: 140px;
   height: 46px;
   border-radius: 12px;
@@ -410,6 +407,13 @@ header {
   font-size: 15px;
   cursor: pointer;
   transition: transform 0.2s ease;
+}
+
+.gitBtn > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .app_txt > button:hover {
@@ -566,12 +570,18 @@ header {
   font-weight: 800;
 }
 
-.video > p {
+.video > p,
+.video > a {
   color: var(--muted);
   font-size: 1.2rem;
   margin: 0 auto;
   width: min(70%, 900px);
   line-height: 1.6;
+}
+
+.video > a {
+  text-decoration: none;
+  font-weight: 600;
 }
 
 video {
@@ -1017,7 +1027,7 @@ textarea:focus {
     font-size: 0.95rem;
   }
 
-  .aboutP > p{
+  .aboutP > p {
     font-size: 0.95rem;
   }
 
