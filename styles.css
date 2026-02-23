@@ -75,10 +75,6 @@ section {
   scroll-margin-top: calc(var(--header-h) + 20px);
 }
 
-/* =========================================
-   HEADER + NAV
-========================================= */
-
 header {
   position: fixed;
   top: 0;
@@ -131,7 +127,6 @@ header {
   color: #3b82f6;
 }
 
-/* bouton CV dans le menu (desktop & mobile) */
 .downloadCV {
   background-color: var(--primary);
   color: #fff !important;
@@ -154,7 +149,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* Burger */
 .burger-menu {
   display: none;
   width: 32px;
@@ -182,7 +176,6 @@ header {
   display: block !important;
 }
 
-/* Overlay menu mobile */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -201,10 +194,6 @@ header {
   opacity: 1;
   visibility: visible;
 }
-
-/* =========================================
-   HERO
-========================================= */
 
 .hero {
   max-width: var(--container);
@@ -292,10 +281,6 @@ header {
   background-color: #fff;
   color: #000;
 }
-
-/* =========================================
-   APPS
-========================================= */
 
 .apps {
   width: 100%;
@@ -420,7 +405,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* badges lang */
 .languages {
   display: inline-flex;
   justify-content: center;
@@ -435,10 +419,6 @@ header {
   font-size: 12px;
   white-space: nowrap;
 }
-
-/* =========================================
-   PROJECTS
-========================================= */
 
 .projects {
   max-width: var(--container);
@@ -469,7 +449,7 @@ header {
   max-width: 360px;
   display: flex;
   justify-content: center;
-  height: 800px;
+  height: 600px;
 }
 
 .work {
@@ -544,10 +524,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* =========================================
-   3D VIDEO
-========================================= */
-
 .animation {
   width: 100%;
   display: flex;
@@ -618,10 +594,6 @@ video[poster] {
   padding: 20px 20px;
 }
 
-/* =========================================
-   ABOUT
-========================================= */
-
 .about {
   width: 100%;
   margin: 0 auto;
@@ -653,10 +625,6 @@ video[poster] {
   margin: 0 auto;
   line-height: 1.6;
 }
-
-/* =========================================
-   CONTACT
-========================================= */
 
 .contact {
   margin-top: 100px;
@@ -767,11 +735,6 @@ textarea:focus {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-/* Desktop: forcer la nav normale + masquer overlay/burger */
 @media screen and (min-width: 1025px) {
   .burger-menu,
   .menu-overlay {
@@ -805,7 +768,6 @@ textarea:focus {
   }
 }
 
-/* Tablet & below */
 @media screen and (max-width: 1024px) {
   :root {
     --header-h: 60px;
@@ -925,7 +887,6 @@ textarea:focus {
     gap: 60px;
   }
 
-  /* Apps en colonne */
   .app {
     flex-direction: column;
   }
@@ -949,7 +910,6 @@ textarea:focus {
   }
 }
 
-/* Mobile */
 @media screen and (max-width: 768px) {
   .nom {
     font-size: 18px;
@@ -1017,7 +977,6 @@ textarea:focus {
   }
 }
 
-/* Small mobile */
 @media screen and (max-width: 480px) {
   .header,
   .hero,
@@ -1195,7 +1154,6 @@ textarea:focus {
   }
 }
 
-/* paysage bas écran */
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .hero {
     min-height: auto;
