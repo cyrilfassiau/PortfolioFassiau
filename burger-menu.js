@@ -1,128 +1,141 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Sélection des éléments
-  const burgerBtn = document.querySelector('.burger-menu');
-  const nav = document.querySelector('.main-nav');
-  const overlay = document.querySelector('.menu-overlay');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const fax = document.querySelector(".fa-x");
-  const fabars = document.querySelector(".fa-bars");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerBtn = document.querySelector(".burger");
+  const nav = document.querySelector(".nav");
+  const overlay = document.querySelector(".scrim");
   const body = document.body;
 
-  // Fonction pour ouvrir le menu
+  if (!burgerBtn || !nav || !overlay) return;
+
+  const DESKTOP = window.matchMedia("(min-width: 901px)");
+  const navLinks = nav.querySelectorAll("a");
+  let lastFocused = null;
+
+  
+  function syncInert() {
+    const hidden = !DESKTOP.matches && !nav.classList.contains("open");
+    nav.toggleAttribute("inert", hidden);
+    nav.setAttribute("aria-hidden", hidden ? "true" : "false");
+  }
+
   function openMenu() {
-    burgerBtn.classList.add('active');
-    fax.classList.add('active');
-    fabars.classList.add('active');
-    nav.classList.add('active');
-    overlay.classList.add('active');
-    body.classList.add('menu-open');
-    burgerBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  // Fonction pour fermer le menu
-  function closeMenu() {
-    burgerBtn.classList.remove('active');
-    nav.classList.remove('active');
-    fax.classList.remove('active');
-    fabars.classList.remove('active');
-    overlay.classList.remove('active');
-    body.classList.remove('menu-open');
-    burgerBtn.setAttribute('aria-expanded', 'false');
-  }
-
-  // Toggle du menu au clic sur le burger
-  burgerBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
+    lastFocused = document.activeElement;
+    burgerBtn.classList.add("open");
+    nav.classList.add("open");
+    overlay.hidden = false;
     
-    if (nav.classList.contains('active')) {
+    requestAnimationFrame(() => overlay.classList.add("open"));
+    body.classList.add("locked");
+    burgerBtn.setAttribute("aria-expanded", "true");
+    burgerBtn.setAttribute("aria-label", "Fermer le menu");
+    syncInert();
+    navLinks[0]?.focus();
+  }
+
+  function closeMenu({ restoreFocus = true } = {}) {
+    burgerBtn.classList.remove("open");
+    nav.classList.remove("open");
+    overlay.classList.remove("open");
+    body.classList.remove("locked");
+    burgerBtn.setAttribute("aria-expanded", "false");
+    burgerBtn.setAttribute("aria-label", "Ouvrir le menu");
+    syncInert();
+
+    if (restoreFocus && lastFocused instanceof HTMLElement) {
+      lastFocused.focus();
+    }
+    lastFocused = null;
+  }
+
+  
+  overlay.addEventListener("transitionend", function (e) {
+    if (e.propertyName === "opacity" && !overlay.classList.contains("open")) {
+      overlay.hidden = true;
+    }
+  });
+
+  burgerBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (nav.classList.contains("open")) {
       closeMenu();
     } else {
       openMenu();
     }
   });
 
-  // Fermer le menu en cliquant sur l'overlay
-  overlay.addEventListener('click', closeMenu);
+  overlay.addEventListener("click", () => closeMenu());
 
-  // Fermer le menu en cliquant sur un lien de navigation
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      // Petite pause pour permettre l'animation du scroll
-      setTimeout(closeMenu, 300);
+  
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (nav.classList.contains("open")) closeMenu({ restoreFocus: false });
     });
   });
 
-  // Fermer le menu avec la touche Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && nav.classList.contains('active')) {
+  document.addEventListener("keydown", function (e) {
+    if (!nav.classList.contains("open")) return;
+
+    if (e.key === "Escape") {
       closeMenu();
+      return;
+    }
+
+    
+    if (e.key === "Tab") {
+      const focusable = [burgerBtn, ...navLinks];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 
-  // Fermer le menu si on redimensionne vers desktop
-  let resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      if (window.innerWidth > 1024 && nav.classList.contains('active')) {
-        closeMenu();
-      }
-    }, 250);
-  });
-
-  // Smooth scroll pour tous les liens d'ancrage
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      
-      // Vérifier si c'est un lien d'ancrage (commence par #)
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          // Calculer la position en tenant compte du header fixe
-          const headerHeight = document.querySelector('header').offsetHeight;
-          const targetPosition = targetElement.offsetTop - headerHeight;
-          
-          // Scroll fluide
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
-  });
-
-  // Animation des boutons du hero
-  const exploreBtn = document.querySelector('.explore');
-  const discussBtn = document.querySelector('.discuss');
-
-  if (exploreBtn) {
-    exploreBtn.addEventListener('click', function() {
-      const projectsSection = document.getElementById('apps');
-      if (projectsSection) {
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = projectsSection.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
   
-}
+  DESKTOP.addEventListener("change", function () {
+    if (DESKTOP.matches && nav.classList.contains("open")) {
+      closeMenu({ restoreFocus: false });
+    }
+    syncInert();
+  });
 
+  syncInert();
+});
 
+/**
+ * The grid draws itself in — the build's one authored motion moment.
+ *
+ * The rules are painted by default; this opts each list into drawing only when
+ * motion is welcome, so a failed script or a reduced-motion preference leaves a
+ * complete page rather than an invisible one.
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const lists = document.querySelectorAll(".rows");
+  if (!lists.length) return;
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-);
+  lists.forEach((list) => list.setAttribute("data-draw", ""));
 
+  const io = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const row = entry.target;
+        const siblings = [...row.parentElement.children];
+        
+        row.style.setProperty("--draw-delay", siblings.indexOf(row) * 90 + "ms");
+        row.classList.add("drawn");
+        obs.unobserve(row);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.15 },
+  );
 
-
-
+  document.querySelectorAll(".rows .row").forEach((row) => io.observe(row));
+});

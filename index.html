@@ -4,385 +4,348 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="burger-menu.css" />
-    <script src="main.js" defer></script>
-    <script src="burger-menu.js" defer></script>
-    <title>Cyril Fassiau</title>
+    <meta name="color-scheme" content="only light" />
+    <meta name="theme-color" content="#F2F2F0" />
+    <title>Cyril Fassiau — Développeur front-end</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..112,400..800&display=swap"
     />
-    <script src="script.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/ca71dbf907.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "iJr-eOdLuenucLfWo",
-        });
-      })();
-    </script>
+    <link rel="stylesheet" href="styles.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="hero-type.js" defer></script>
+    <script src="burger-menu.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="header">
-        <div class="nom">Cyril Fassiau</div>
+   
 
-        <button class="burger-menu" aria-label="Menu" aria-expanded="false">
-          <i class="fa-solid fa-bars"></i>
-          <i class="fa-solid fa-x"></i>
-        </button>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-        <nav class="main-nav">
-          <span><a href="#heroo" class="nav-link heroo">Accueil</a></span>
-          
-          <span
-            ><a href="#projectss" class="nav-link solutions">Sites Web</a></span
-          >
-          <span><a href="#apps" class="nav-link doss">Applications</a></span>
-          <span
-            ><a href="#about" class="nav-link doss">À propos de moi</a></span
-          >
+    <header class="rail">
+      <a href="#accueil" class="mark">
+        <span class="mark__sq" aria-hidden="true"></span>Cyril Fassiau
+      </a>
 
-          <span><a href="#contact" class="nav-link processs">Contact</a></span>
-          <span
-            ><a
-              href="cyril_fassiau_dev_front_resume.pdf"
-              download="cyril_fassiau_dev_front_resume.pdf"
-              class="downloadCV"
-              >Voir mon CV</a
-            ></span
-          >
-        </nav>
-      </div>
+      <button class="burger" type="button" aria-label="Ouvrir le menu"
+              aria-expanded="false" aria-controls="menu-principal">
+        <svg class="ic ic--bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <svg class="ic ic--close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#accueil" class="nav__link">Accueil</a></li>
+          <li><a href="#sites-web" class="nav__link">Sites Web</a></li>
+          <li><a href="#applications" class="nav__link">Applications</a></li>
+          <li><a href="#animation-3d" class="nav__link">3D</a></li>
+          <li><a href="#a-propos" class="nav__link">À propos de moi</a></li>
+          <li><a href="#contact" class="nav__link nav__link--blue">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <div class="menu-overlay"></div>
+    <div class="scrim" hidden></div>
 
-    <main>
-      <section class="hero" id="heroo">
-        <img src="images/CyrilFassiau.jpg" class="myHead" />
-        <div class="heroText">
-          <h1>Développeur front-end</h1>
-          
-          <span></span>
-          <span
-            >Après plusieurs années en production 3D, j’ai progressivement
-            orienté ma carrière vers le développement web afin de me consacrer à
-            la création de véritables produits logiciels. J’apprécie
-            particulièrement transformer des idées complexes en interfaces
-            structurées, maintenables et performantes, tout en continuant à
-            approfondir mes compétences techniques au sein d’environnements
-            collaboratifs.</span
-          >
-          <span
-            ><br /><br />Disponible pour un poste de Développeur Front-end
-            Belgique / Remote</span
-          >
-          <div class="boutons">
-            <button class="explore">Explorez mes travaux</button>
-            <a
-              href="cyril_fassiau_dev_front_resume.pdf"
-              download="cyril_fassiau_dev_cv.pdf"
-              class="discuss"
-              >Voir mon CV</a
-            >
+    <main id="contenu">
+     
+      <section class="hero" id="accueil">
+        <h1 class="struct hero__title">Développeur<br />front-end</h1>
+
+        <div class="hero__grid">
+          <figure class="hero__portrait">
+            <img src="images/optimized/CyrilFassiau.jpg" width="640" height="640"
+                 fetchpriority="high" decoding="async" alt="Portrait de Cyril Fassiau" />
+          </figure>
+
+          <div class="hero__lede">
+            <p>
+              Après plusieurs années en production 3D, j’ai progressivement
+              orienté ma carrière vers le développement web afin de me consacrer
+              à la création de véritables produits logiciels. J’apprécie
+              particulièrement transformer des idées complexes en interfaces
+              structurées, maintenables et performantes, tout en continuant à
+              approfondir mes compétences techniques au sein d’environnements
+              collaboratifs.
+            </p>
+          </div>
+
+          <div class="hero__acts">
+            <a href="#sites-web" class="btn btn--blue">Explorez mes travaux</a>
+            <a href="cyril_fassiau_dev_front_resume.pdf"
+               download="cyril_fassiau_dev_front_resume.pdf" class="btn">Voir mon CV</a>
           </div>
         </div>
+
+        <p class="hero__avail">
+          Disponible pour un poste de Développeur Front-end — Belgique / Remote
+        </p>
       </section>
 
-   
-      <section class="projects" id="projectss">
-        <p>Portfolio</p>
-        <h1>Sites Web</h1>
-        <div class="works">
-          <a
-            href="https://www.fassiaupolymerconsulting.com"
-            target="_blank"
-            class="work_link"
-          >
-            <div class="work">
-              <div class="image_box">
-                <img src="images/fassiau_website.png" class="work-image" />
-              </div>
-              <div class="work_bottom">
-                <div class="lang_box">
-                  <div class="languages"><span>HTML</span></div>
-                  <div class="languages"><span>CSS</span></div>
-                </div>
-                <div class="work_title">Fassiau Polymer Consulting</div>
-                <div class="work_text">
-                  <span
-                    >Site vitrine pour un consultant en thermoplastiques.</span
-                  >
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://evasiatravel.netlify.app/"
-            target="_blank"
-            class="work_link"
-            ><div class="work">
-              <div class="image_box">
-                <img src="images/evasia_website.png" class="work-image" />
-              </div>
-              <div class="work_bottom">
-                <div class="lang_box">
-                  <div class="languages"><span>HTML</span></div>
-                  <div class="languages"><span>CSS</span></div>
-                  <div class="languages"><span>JS</span></div>
-                  <div class="languages"><span>REACT</span></div>
-                </div>
-                <div class="work_title">Evasia</div>
-                <div class="work_text">
-                  <span
-                    >Site pour l'agence de voyage à Bali <b>Evasia</b>.
-                  </span>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://saas-react-4y5s.vercel.app/"
-            target="_blank"
-            class="work_link"
-          >
-            <div class="work">
-              <div class="image_box">
-                <img src="images/booki_website.png" class="work-image" />
-              </div>
-              <div class="work_bottom">
-                <div class="lang_box">
-                  <div class="languages"><span>HTML</span></div>
-                  <div class="languages"><span>CSS</span></div>
-                  <div class="languages"><span>JS</span></div>
-                </div>
-                <div class="work_title">SaaS landing page</div>
-                <div class="work_text">
-                  <span
-                    >Landing page d'un SaaS de facturation pour freelances et
-                    TPE (fictif)</span
-                  >
-                </div>
-              </div>
-            </div>
-          </a>
+     
+      <section class="index" id="sites-web" aria-labelledby="t-sites">
+        <div class="index__head">
+          <h2 class="struct" id="t-sites">Sites Web</h2>
+          <p class="index__note">Trois sites en production. Chaque ligne porte son URL publique.</p>
         </div>
+
+        <ol class="rows">
+          <li class="row">
+            <p class="row__no" aria-hidden="true">01</p>
+            <div class="row__text">
+              <h3 class="row__title">Fassiau Polymer Consulting</h3>
+              <p class="row__desc">Site vitrine pour un consultant en thermoplastiques.</p>
+              <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+              <a class="btn btn--blue btn--sm" href="https://www.fassiaupolymerconsulting.com"
+                 target="_blank" rel="noopener noreferrer"
+                >Voir le site<span class="vh"> Fassiau Polymer Consulting (nouvel onglet)</span></a>
+            </div>
+            <div class="row__media">
+              <img src="images/optimized/fassiau_website.jpg" width="720" height="558"
+                   loading="lazy" decoding="async" alt="Page d’accueil du site Fassiau Polymer Consulting, présentant le consultant et ses services en thermoplastiques" />
+            </div>
+          </li>
+
+          <li class="row row--flip">
+            <p class="row__no" aria-hidden="true">02</p>
+            <div class="row__text">
+              <h3 class="row__title">Evasia</h3>
+              <p class="row__desc">Site pour l’agence de voyage à Bali <b>Evasia</b>.</p>
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li><li>React</li></ul>
+              <a class="btn btn--blue btn--sm" href="https://evasiatravel.netlify.app/"
+                 target="_blank" rel="noopener noreferrer"
+                >Voir le site<span class="vh"> Evasia (nouvel onglet)</span></a>
+            </div>
+            <div class="row__media">
+              <img src="images/optimized/evasia_website.jpg" width="720" height="558"
+                   loading="lazy" decoding="async" alt="Page d’accueil du site Evasia, agence de voyage à Bali, avec une photographie de rizières en terrasses" />
+            </div>
+          </li>
+
+          <li class="row">
+            <p class="row__no" aria-hidden="true">03</p>
+            <div class="row__text">
+              <h3 class="row__title">SaaS landing page</h3>
+              <p class="row__desc">
+                Landing page d’un SaaS de facturation pour freelances et TPE
+                (produit fictif).
+              </p>
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+              <a class="btn btn--blue btn--sm" href="https://saas-react-4y5s.vercel.app/"
+                 target="_blank" rel="noopener noreferrer"
+                >Voir le site<span class="vh"> SaaS landing page (nouvel onglet)</span></a>
+            </div>
+            <div class="row__media">
+              <img src="images/optimized/booki_website.jpg" width="720" height="558"
+                   loading="lazy" decoding="async" alt="Landing page d’un SaaS de facturation, avec une capture de l’interface de l’application" />
+            </div>
+          </li>
+        </ol>
       </section>
 
-         <section class="apps" id="apps">
-        <div class="applications">
-          <span>Front-end (React)</span>
-          <h1>Applications</h1>
-          <div class="apps_boxes">
-            <div class="app">
-              <div class="app_txt" id="app_txt">
-                <h1>Mini CRM</h1>
-                <div class="languagesBtn">
-                  <div class="languages">HTML</div>
-                  <div class="languages">CSS</div>
-                  <div class="languages">JS</div>
-                  <div class="languages">REACT</div>
-                </div>
-                <span
-                  >Application frontend développée avec React afin de reproduire
-                  les bases d’un système CRM. Ce projet met l’accent sur la
-                  gestion d’état, la logique applicative et la structuration
-                  modulaire des composants. Il m’a permis de travailler sur
-                  l’organisation des données, les interactions utilisateur et la
-                  conception d’une interface évolutive.
-                </span>
-                <span
-                  ><b>Focus</b> : gestion d’état React, logique CRUD,
-                  structuration modulaire des composants</span
-                >
-                <span
-                  ><b>Objectif</b> : concevoir une interface produit claire et
-                  évolutive proche d’une application réelle</span
-                >
-                <div class="gitBtn">
-                  <button
-                    onclick="
-                      window.open('https://mini-crm-ten-beta.vercel.app/')
-                    "
-                  >
-                    Lancer
-                  </button>
-                  <a
-                    href="https://github.com/cyrilfassiau/mini-crm"
-                    target="_blank"
-                  >
-                    Repo Github
-                  </a>
-                </div>
-              </div>
-
-              <img src="images/CRM.png" class="app_img" id="app_img" />
-            </div>
-            <div class="app">
-              <img src="images/weatherapp.png" class="app_img" />
-              <div class="app_txt">
-                <h1>Weather App</h1>
-                <div class="languagesBtn">
-                  <div class="languages">HTML</div>
-                  <div class="languages">CSS</div>
-                  <div class="languages">JS</div>
-                </div>
-                <span
-                  >Application frontend permettant de récupérer et d’afficher
-                  des données météorologiques via une API externe. Ce projet met
-                  l’accent sur la gestion des requêtes asynchrones, le
-                  traitement des données et la mise à jour dynamique de
-                  l’interface utilisateur.
-                </span>
-                <span
-                  ><b>Focus</b> : intégration d’API externe, gestion asynchrone
-                  des données, mise à jour dynamique de l’interface</span
-                >
-                <span
-                  ><b>Objectif</b> : renforcer la compréhension du flux de
-                  données et du fonctionnement d’une application connectée à un
-                  service externe</span
-                >
-                <div class="gitBtn">
-                  <button
-                    onclick="
-                      window.open(
-                        'https://cyrilfassiau.github.io/weatherapp/',
-                        '_blank',
-                      )
-                    "
-                  >
-                    Lancer
-                  </button>
-                  <a
-                    href="https://github.com/cyrilfassiau/weatherapp"
-                    target="_blank"
-                  >
-                    Repo Github
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+     
+      <section class="index" id="applications" aria-labelledby="t-apps">
+        <div class="index__head">
+          <h2 class="struct" id="t-apps">Applications</h2>
+          <p class="index__note">Démo exécutable et code source publics pour chacune.</p>
         </div>
+
+        <ol class="rows">
+          <li class="row row--major">
+            <p class="row__no" aria-hidden="true">01</p>
+            <div class="row__text">
+              <h3 class="row__title">Mini CRM</h3>
+              <p class="row__desc">
+                Application frontend développée avec React afin de reproduire les
+                bases d’un système CRM. Ce projet met l’accent sur la gestion
+                d’état, la logique applicative et la structuration modulaire des
+                composants. Il m’a permis de travailler sur l’organisation des
+                données, les interactions utilisateur et la conception d’une
+                interface évolutive.
+              </p>
+              <dl class="spec">
+                <div><dt>Focus</dt><dd>gestion d’état React, logique CRUD, structuration modulaire des composants</dd></div>
+                <div><dt>Objectif</dt><dd>concevoir une interface produit claire et évolutive proche d’une application réelle</dd></div>
+              </dl>
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li><li>React</li></ul>
+              <div class="row__acts">
+                <a class="btn btn--blue btn--sm" href="https://mini-crm-ten-beta.vercel.app/"
+                   target="_blank" rel="noopener noreferrer"
+                  >Lancer la démo<span class="vh"> du Mini CRM (nouvel onglet)</span></a>
+                <a class="btn btn--sm" href="https://github.com/cyrilfassiau/mini-crm"
+                   target="_blank" rel="noopener noreferrer"
+                  >Code source<span class="vh"> du Mini CRM sur GitHub (nouvel onglet)</span></a>
+              </div>
+            </div>
+            <div class="row__media">
+              <img src="images/optimized/CRM.png" width="1200" height="610"
+                   loading="lazy" decoding="async" alt="Interface du Mini CRM : tableau de bord listant les clients avec leurs statuts" />
+            </div>
+          </li>
+
+          <li class="row row--major row--flip">
+            <p class="row__no" aria-hidden="true">02</p>
+            <div class="row__text">
+              <h3 class="row__title">Weather App</h3>
+              <p class="row__desc">
+                Application frontend permettant de récupérer et d’afficher des
+                données météorologiques via une API externe. Ce projet met
+                l’accent sur la gestion des requêtes asynchrones, le traitement
+                des données et la mise à jour dynamique de l’interface
+                utilisateur.
+              </p>
+              <dl class="spec">
+                <div><dt>Focus</dt><dd>intégration d’API externe, gestion asynchrone des données, mise à jour dynamique de l’interface</dd></div>
+                <div><dt>Objectif</dt><dd>renforcer la compréhension du flux de données et du fonctionnement d’une application connectée à un service externe</dd></div>
+              </dl>
+              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+              <div class="row__acts">
+                <a class="btn btn--blue btn--sm" href="https://cyrilfassiau.github.io/weatherapp/"
+                   target="_blank" rel="noopener noreferrer"
+                  >Lancer la démo<span class="vh"> de la Weather App (nouvel onglet)</span></a>
+                <a class="btn btn--sm" href="https://github.com/cyrilfassiau/weatherapp"
+                   target="_blank" rel="noopener noreferrer"
+                  >Code source<span class="vh"> de la Weather App sur GitHub (nouvel onglet)</span></a>
+              </div>
+            </div>
+            <div class="row__media">
+              <img src="images/optimized/weatherapp.jpg" width="1200" height="756"
+                   loading="lazy" decoding="async" alt="Interface de la Weather App affichant la météo courante et les prévisions d’une ville" />
+            </div>
+          </li>
+        </ol>
       </section>
 
-      <section class="animation" id="apps">
-        <div class="video">
-          <span>3D</span>
-          <h1>Modélisation et animation 3D</h1>
+      
+      <section class="reel" id="animation-3d" aria-labelledby="t-3d">
+        <div class="index__head">
+          <h2 class="struct" id="t-3d">Modélisation et animation 3D</h2>
+          <p class="index__note">Parcours antérieur — La Petite Odyssée, 3 min 19 s.</p>
+        </div>
 
-          <video width="1000" poster="images/LaPetiteOdysee.jpg" controls>
-            <source
-              src="videos/la_petite_odyssée (1080p).mp4"
-              type="video/mp4"
-            />
-
-            Your browser does not support HTML video.
+        <div class="reel__frame">
+          <video width="1200" height="664" poster="images/optimized/LaPetiteOdysee.jpg"
+                 preload="none" controls>
+            <source src="videos/la_petite_odyssée (1080p).mp4" type="video/mp4" />
+            Votre navigateur ne peut pas lire cette vidéo.
+            <a href="videos/la_petite_odyssée (1080p).mp4">Télécharger la vidéo (MP4)</a>.
           </video>
-          <div class="artContainer">
-            <a href="https://www.artstation.com/cyrilfassiau" class="threeDBtn"
-              >Vers mon portfolio 3D</a
-            >
-          </div>
         </div>
-      </section>
-      <section class="about" id="about">
-        <div class="aboutFlex">
-          <span>À propos de moi</span>
-          <h1>Mon aventure</h1>
-          <div class="aboutP">
-            <p>
-              Issu d’un parcours d’artiste 3D spécialisé en modélisation, j’ai
-              développé une forte rigueur technique ainsi qu’une approche
-              structurée de la résolution de problèmes. Au fil de mon expérience
-              professionnelle, mon intérêt pour la programmation s’est
-              progressivement affirmé, m’amenant à orienter naturellement ma
-              carrière vers le développement web.
-            </p>
-            <p>
-              Aujourd’hui, je travaille principalement en frontend avec HTML,
-              CSS, JavaScript et React, en me concentrant sur la création
-              d’interfaces claires, maintenables et orientées produit.
-              J’apprécie particulièrement transformer des besoins concrets en
-              solutions fonctionnelles, en privilégiant la simplicité, la
-              lisibilité du code et la qualité de l’expérience utilisateur.
-            </p>
-            <p>
-              Mon objectif est de rejoindre une équipe de développement où je
-              peux continuer à progresser techniquement, contribuer à des
-              applications utiles et évoluer progressivement vers une vision
-              plus complète du développement logiciel, incluant à terme des
-              compétences backend.
-            </p>
-          </div>
+
+        <div class="reel__foot">
+          <a class="btn btn--sm" href="https://www.artstation.com/cyrilfassiau"
+             target="_blank" rel="noopener noreferrer"
+            >Portfolio 3D sur ArtStation<span class="vh"> (nouvel onglet)</span></a>
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <div class="contact_box">
-          <div class="contact_box_left">
-            <span>CONTACT</span>
-            <h1>Contactez-moi</h1>
-            <p>Je suis ouvert pour discuter de nouvelle opportunités.</p>
-            <div class="mailoc">
-              <i class="fa-solid fa-envelope"></i>cyril.fassiau@hotmail.com
-            </div>
-            <div class="mailoc">
-              <i class="fa-solid fa-location-arrow"></i>Wallonie, Belgique
-            </div>
-          </div>
-          <div class="contact_box_right">
-            <form id="contactForm">
-              <label>Nom</label>
-              <input
-                type="text"
-                placeholder="Votre nom"
-                id="name"
-                autocomplete="off"
-              />
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="Email"
-                id="mail"
-                autocomplete="off"
-              />
+    
+      <section class="invert" id="a-propos" aria-labelledby="t-about">
+        <h2 class="struct invert__title" id="t-about">Mon aventure</h2>
 
-              <label>Message</label>
-              <textarea
-                rows="6"
-                placeholder="Message"
-                id="message"
-                autocomplete="off"
-              ></textarea>
-              <button type="submit">Envoyer</button>
-            </form>
+        <div class="invert__cols">
+          <p>
+            Issu d’un parcours d’artiste 3D spécialisé en modélisation, j’ai
+            développé une forte rigueur technique ainsi qu’une approche
+            structurée de la résolution de problèmes. Au fil de mon expérience
+            professionnelle, mon intérêt pour la programmation s’est
+            progressivement affirmé, m’amenant à orienter naturellement ma
+            carrière vers le développement web.
+          </p>
+          <p>
+            Aujourd’hui, je travaille principalement en frontend avec HTML, CSS,
+            JavaScript et React, en me concentrant sur la création d’interfaces
+            claires, maintenables et orientées produit. J’apprécie
+            particulièrement transformer des besoins concrets en solutions
+            fonctionnelles, en privilégiant la simplicité, la lisibilité du code
+            et la qualité de l’expérience utilisateur.
+          </p>
+          <p>
+            Mon objectif est de rejoindre une équipe de développement où je peux
+            continuer à progresser techniquement, contribuer à des applications
+            utiles et évoluer progressivement vers une vision plus complète du
+            développement logiciel, incluant à terme des compétences backend.
+          </p>
+        </div>
+      </section>
+
+    
+      <section class="close" id="contact" aria-labelledby="t-contact">
+        <h2 class="struct close__title" id="t-contact">Contactez-moi</h2>
+
+        <div class="close__grid">
+          <div class="close__side">
+            <p class="close__intro">
+              Je suis ouvert à toute discussion sur de nouvelles opportunités.
+            </p>
+            <dl class="spec">
+              <div><dt>Email</dt><dd><a href="mailto:cyril.fassiau@hotmail.com">cyril.fassiau@hotmail.com</a></dd></div>
+              <div><dt>Localisation</dt><dd>Wallonie, Belgique</dd></div>
+              <div><dt>Disponibilité</dt><dd>Belgique / Remote</dd></div>
+            </dl>
           </div>
+
+          <form id="contactForm" class="close__form" novalidate>
+            <p class="form-intro">Tous les champs sont obligatoires</p>
+
+            <div class="fld">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom"
+                     autocomplete="name" maxlength="100" required aria-describedby="name-error" />
+              <p class="fld__err" id="name-error" hidden></p>
+            </div>
+
+            <div class="fld">
+              <label for="mail">Email</label>
+              <input type="email" id="mail" name="mail" placeholder="vous@exemple.com"
+                     autocomplete="email" maxlength="254" required aria-describedby="mail-error" />
+              <p class="fld__err" id="mail-error" hidden></p>
+            </div>
+
+            <div class="fld">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Votre message"
+                        maxlength="2000" required aria-describedby="message-error"></textarea>
+              <p class="fld__err" id="message-error" hidden></p>
+            </div>
+
+            <button type="submit" class="btn btn--blue form-submit">
+              <span class="form-submit__label">Envoyer</span>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
-    <footer>© 2026 Cyril Fassiau</footer>
+
+    <footer class="foot">
+      <p class="struct foot__type">Développeur<br />front-end</p>
+      <div class="foot__cols">
+        <div>
+          <p class="foot__h">Pages</p>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#sites-web">Sites Web</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#a-propos">À propos de moi</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="foot__h">Contact</p>
+          <ul>
+            <li><a href="mailto:cyril.fassiau@hotmail.com">cyril.fassiau@hotmail.com</a></li>
+            <li><a href="https://github.com/cyrilfassiau" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (nouvel onglet)</span></a></li>
+            <li><a href="cyril_fassiau_dev_front_resume.pdf" download="cyril_fassiau_dev_front_resume.pdf">Voir mon CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__legal">© 2026 Cyril Fassiau — Wallonie, Belgique</p>
+    </footer>
   </body>
 </html>
