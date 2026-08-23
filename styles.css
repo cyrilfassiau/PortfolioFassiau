@@ -7,7 +7,7 @@
   --ink-mute: #5b5b57;
   --blue: #0022ff;
   --blue-lit: #6e8bff;  
-  --line: #d5d5d2;
+  --line: #808068;
 
   --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
   --s5: 20px; --s6: 24px; --s8: 32px; --s10: 40px;
@@ -21,6 +21,39 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --fast: 120ms;
   --dur: 240ms;
+
+   --bg: #1c1c1c;
+  --bg-2: #242424;
+  --bg-3: #202220;
+
+  /* ink */
+  --white: #ffffff;
+  --papers: #ebe2da;
+  --mute: rgba(255, 255, 255, 0.67);
+  --faint: rgba(255, 255, 255, 0.48);
+
+
+  /* accents */
+  --green: #779179;
+  --lime: #d5ff81;
+  --lime-2: #c2f970;
+  --olive: #6c8244;
+  --lav: #cdc1ff;
+
+  --grad-lime: linear-gradient(180deg, var(--lime) 0%, var(--olive) 100%);
+  --grad-ghost: linear-gradient(180deg, #f0f8ff 0%, #e3e8e3 100%);
+
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px;
+  --s5: 20px; --s6: 24px; --s8: 34px; --s10: 40px;
+  --s12: 48px; --s16: 64px; --s20: 80px; --s24: 100px; --s32: 160px;
+
+  --page: 1200px;
+  --gutter: var(--s10);
+  --rail-h: 78px;
+  --tap: 44px;
+  --r: 15px;
+
+
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -475,4 +508,31 @@ input:focus-visible, textarea:focus-visible { outline: 3px solid var(--blue); ou
   .rows[data-draw] .row::after { animation: none; display: none; }
   .lt { font-variation-settings: "wdth" 100, "wght" 800 !important; }
   .nav { transition: none; }
+}
+
+
+
+.marquee {
+  border-top: 2px solid var(--papers); border-bottom: 2px solid var(--papers);
+  overflow: hidden; margin: var(--s8) 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.marquee__track { display: flex; width: max-content; animation: slide 26s linear infinite; }
+.marquee__set { display: flex; align-items: center; gap: var(--s6); padding: var(--s5) var(--s3) var(--s5) 0; }
+.marquee__set .display {flex: none; }
+.marquee__star {
+  width: 30px; height: 30px; flex: none;
+  background: var(--lav);
+  clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+}
+@keyframes slide { to { transform: translateX(-50%); } }
+
+
+
+.display--lg {
+  font-weight: 900;
+  font-size: clamp(3rem, 1.2rem + 6.2vw, 7rem);
+  line-height: 0.84;
+  letter-spacing: 0.005em;
 }
