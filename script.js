@@ -21,16 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
       input: document.getElementById("name"),
       validate: (v) =>
         v.length === 0
-          ? "Indiquez votre nom pour que je sache qui me contacte."
+          ? "Enter your name so I know who's contacting me."
           : null,
     },
     {
       input: document.getElementById("mail"),
       validate: (v) => {
-        if (v.length === 0) return "Indiquez votre email pour que je puisse vous répondre.";
+        if (v.length === 0) return "Enter your email so I can reply to you.";
         
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))
-          return "Cette adresse semble incomplète. Exemple : nom@exemple.com";
+          return "This address looks incomplete. Example: name@example.com";
         return null;
       },
     },
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       input: document.getElementById("message"),
       validate: (v) =>
         v.length === 0
-          ? "Écrivez quelques mots sur ce que vous cherchez."
+          ? "Write a few words about what you're looking for."
           : null,
     },
   ];
@@ -89,14 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (firstInvalid) {
-      setStatus("Le formulaire n’a pas pu être envoyé. Corrigez les champs signalés.", "error");
+      setStatus("The form couldn't be sent. Please correct the highlighted fields.", "error");
       firstInvalid.focus();
       return;
     }
 
     if (!window.emailjs) {
       setStatus(
-        "L’envoi est indisponible pour le moment. Écrivez-moi directement à cyril.fassiau@hotmail.com.",
+        "Sending is unavailable right now. Please email me directly at cyril.fassiau@hotmail.com.",
         "error",
       );
       return;
@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
-    submitLabel.textContent = "Envoi en cours";
-    setStatus("Envoi en cours…", null);
+    submitLabel.textContent = "Sending";
+    setStatus("Sending…", null);
 
     emailjs
       .send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
@@ -116,12 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(() => {
         form.reset();
-        setStatus("Message envoyé. Merci — je vous réponds dès que possible.", "success");
+        setStatus("Message sent. Thanks — I'll get back to you as soon as possible.", "success");
       })
       .catch((err) => {
         console.error("EmailJS error:", err);
         setStatus(
-          "L’envoi a échoué. Réessayez, ou écrivez-moi à cyril.fassiau@hotmail.com.",
+          "Sending failed. Please try again, or email me at cyril.fassiau@hotmail.com.",
           "error",
         );
       })

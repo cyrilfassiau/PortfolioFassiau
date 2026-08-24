@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(() => overlay.classList.add("open"));
     body.classList.add("locked");
     burgerBtn.setAttribute("aria-expanded", "true");
-    burgerBtn.setAttribute("aria-label", "Fermer le menu");
+    burgerBtn.setAttribute("aria-label", "Close menu");
     syncInert();
     navLinks[0]?.focus();
   }
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.remove("open");
     body.classList.remove("locked");
     burgerBtn.setAttribute("aria-expanded", "false");
-    burgerBtn.setAttribute("aria-label", "Ouvrir le menu");
+    burgerBtn.setAttribute("aria-label", "Open menu");
     syncInert();
 
     if (restoreFocus && lastFocused instanceof HTMLElement) {

@@ -26,14 +26,14 @@
   --bg-2: #242424;
   --bg-3: #202220;
 
-  /* ink */
+ 
   --white: #ffffff;
   --papers: #ebe2da;
   --mute: rgba(255, 255, 255, 0.67);
   --faint: rgba(255, 255, 255, 0.48);
 
 
-  /* accents */
+ 
   --green: #779179;
   --lime: #d5ff81;
   --lime-2: #c2f970;
@@ -535,4 +535,38 @@ input:focus-visible, textarea:focus-visible { outline: 3px solid var(--blue); ou
   font-size: clamp(3rem, 1.2rem + 6.2vw, 7rem);
   line-height: 0.84;
   letter-spacing: 0.005em;
+}
+
+
+
+
+body { position: relative; }
+
+.serpent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+ 
+  opacity: 1;
+}
+.serpent svg { display: block; width: 100%; height: 100%; }
+
+
+.hero, .index, .reel, .close, .marquee,
+.invert__title, .invert__cols,
+.foot__type, .foot__cols, .foot__legal {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .serpent { opacity: 0.72; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serpent { opacity: 0.6; }
+  .serpent__line { animation: none !important; }
 }
