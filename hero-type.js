@@ -38,10 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     node.replaceWith(frag);
   });
+  
+  h1.style.opacity = "1";
   if (!chars.length) return;
 
   
   h1.setAttribute("aria-label", label);
+
+  
+  if (document.documentElement.classList.contains("js-anim")) {
+    const cs = getComputedStyle(document.documentElement);
+    const dur = parseFloat(cs.getPropertyValue("--dur")) || 240;
+    const ease = cs.getPropertyValue("--ease").trim() || "cubic-bezier(0.16,1,0.3,1)";
+    const STAGGER = 18;
+    chars.forEach(function (c, i) {
+      c.animate(
+        [{ opacity: 0, transform: "translateY(14px)" }, { opacity: 1, transform: "translateY(0)" }],
+        { duration: dur, delay: i * STAGGER, easing: ease, fill: "both" }
+      );
+    });
+  }
 
   const current = new Float32Array(chars.length).fill(W_BASE);
   const target = new Float32Array(chars.length).fill(W_BASE);

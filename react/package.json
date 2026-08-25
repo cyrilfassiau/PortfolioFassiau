@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-work-filter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "React island: filter + sort for the project list on the portfolio.",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}

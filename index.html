@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js-anim")</script>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="color-scheme" content="only light" />
@@ -20,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <script src="serpent.js" defer></script>
     <script src="hero-type.js" defer></script>
+    <script src="assets/work.js" defer></script>
+    <script src="palette.js" defer></script>
     <script src="burger-menu.js" defer></script>
     <script src="script.js" defer></script>
   </head>
@@ -33,6 +36,15 @@
         <span class="mark__sq" aria-hidden="true"></span>Cyril Fassiau
       </a>
 
+      <button class="cmdk-btn" type="button" aria-haspopup="dialog" aria-expanded="false"
+              aria-keyshortcuts="Meta+K Control+K">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>
+        </svg>
+        <span class="cmdk-btn__txt">Search</span>
+        <kbd class="cmdk-btn__kbd" aria-hidden="true">⌘K</kbd>
+      </button>
+
       <button class="burger" type="button" aria-label="Open menu"
               aria-expanded="false" aria-controls="menu-principal">
         <svg class="ic ic--bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
@@ -42,8 +54,7 @@
       <nav class="nav" id="menu-principal" aria-label="Main navigation">
         <ul>
           <li><a href="#accueil" class="nav__link">Home</a></li>
-          <li><a href="#sites-web" class="nav__link">Websites</a></li>
-          <li><a href="#applications" class="nav__link">Applications</a></li>
+          <li><a href="#travaux" class="nav__link">Work</a></li>
           <li><a href="#animation-3d" class="nav__link">3D</a></li>
           <li><a href="#a-propos" class="nav__link">About me</a></li>
           <li><a href="#contact" class="nav__link nav__link--blue">Contact</a></li>
@@ -52,6 +63,28 @@
     </header>
 
     <div class="scrim" hidden></div>
+
+    <div class="cmdk" hidden>
+      <div class="cmdk__scrim" data-close></div>
+      <div class="cmdk__panel" role="dialog" aria-modal="true" aria-labelledby="cmdk-title">
+        <h2 class="vh" id="cmdk-title">Search this site</h2>
+
+        <input class="cmdk__input" type="text" role="combobox"
+               aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list"
+               aria-label="Search sections, projects and actions"
+               placeholder="Jump to a section, project or action…"
+               autocomplete="off" spellcheck="false" />
+
+        <ul class="cmdk__list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
+        <p class="cmdk__empty" hidden>No matches.</p>
+
+        <div class="cmdk__hint" aria-hidden="true">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> open</span>
+          <span><kbd>esc</kbd> close</span>
+        </div>
+      </div>
+    </div>
 
     <main id="contenu">
      
@@ -78,7 +111,7 @@ developer</h2>
           </div>
 
           <div class="hero__acts">
-            <a href="#sites-web" class="btn btn--blue">Explore my work</a>
+            <a href="#travaux" class="btn btn--blue">Explore my work</a>
             <a href="cyril_fassiau_dev_front_resume_EN.pdf"
                download="cyril_fassiau_dev_front_resume_EN.pdf" class="btn">View my resume</a>
           </div>
@@ -90,138 +123,27 @@ developer</h2>
       </section>
 
      
-      <section class="index" id="sites-web" aria-labelledby="t-sites">
+      <section class="index wk" id="travaux" aria-labelledby="t-work">
         <div class="index__head">
-          <h2 class="struct" id="t-sites">Websites</h2>
-          <p class="index__note">Three sites in production. Each row links to its public URL.</p>
+          <h2 class="struct" id="t-work">Selected work</h2>
+          <p class="index__note">
+            Filter by type or tech stack. Built as a React component on an
+            otherwise static page.
+          </p>
         </div>
 
-        <ol class="rows">
-          <li class="row">
-            <p class="row__no" aria-hidden="true"></p>
-            <div class="row__text">
-              <h3 class="row__title">Fassiau Polymer Consulting</h3>
-              <p class="row__desc">Showcase site for a thermoplastics consultant.</p>
-              <ul class="tags"><li>HTML</li><li>CSS</li></ul>
-              <a class="btn btn--blue btn--sm" href="https://www.fassiaupolymerconsulting.com"
-                 target="_blank" rel="noopener noreferrer"
-                >View site<span class="vh"> Fassiau Polymer Consulting (opens in new tab)</span></a>
-            </div>
-            <div class="row__media">
-              <img src="images/optimized/fassiau_website.jpg" width="720" height="558"
-                   loading="lazy" decoding="async" alt="Homepage of the Fassiau Polymer Consulting site, presenting the consultant and his thermoplastics services" />
-            </div>
-          </li>
-
-          <li class="row row--flip">
-            <p class="row__no" aria-hidden="true"></p>
-            <div class="row__text">
-              <h3 class="row__title">Evasia</h3>
-              <p class="row__desc">Site for the Bali travel agency <b>Evasia</b>.</p>
-              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li><li>React</li></ul>
-              <a class="btn btn--blue btn--sm" href="https://evasiatravel.netlify.app/"
-                 target="_blank" rel="noopener noreferrer"
-                >View site<span class="vh"> Evasia (opens in new tab)</span></a>
-            </div>
-            <div class="row__media">
-              <img src="images/optimized/evasia_website.jpg" width="720" height="558"
-                   loading="lazy" decoding="async" alt="Homepage of the Evasia site, a Bali travel agency, featuring a photo of terraced rice fields" />
-            </div>
-          </li>
-
-          <li class="row">
-            <p class="row__no" aria-hidden="true"></p>
-            <div class="row__text">
-              <h3 class="row__title">SaaS landing page</h3>
-              <p class="row__desc">
-                Landing page for an invoicing SaaS aimed at freelancers and
-                small businesses (fictional product).
-              </p>
-              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
-              <a class="btn btn--blue btn--sm" href="https://saas-react-4y5s.vercel.app/"
-                 target="_blank" rel="noopener noreferrer"
-                >View site<span class="vh"> SaaS landing page (opens in new tab)</span></a>
-            </div>
-            <div class="row__media">
-              <img src="images/optimized/booki_website.jpg" width="720" height="558"
-                   loading="lazy" decoding="async" alt="Landing page for an invoicing SaaS, showing a screenshot of the application interface" />
-            </div>
-          </li>
-        </ol>
-      </section>
-
-     
-      <section class="index" id="applications" aria-labelledby="t-apps">
-        <div class="index__head">
-          <h2 class="struct" id="t-apps">Applications</h2>
-          <p class="index__note">Live demo and public source code for each.</p>
+        <div id="work-root" data-fallback>
+          <p class="index__note">Loading projects…</p>
         </div>
 
-        <ol class="rows">
-          <li class="row row--major">
-            <p class="row__no" aria-hidden="true"></p>
-            <div class="row__text">
-              <h3 class="row__title">Mini CRM</h3>
-              <p class="row__desc">
-                Frontend application built with React to reproduce the basics
-                of a CRM system. This project focuses on state management,
-                application logic, and modular component structure. It let me
-                work on data organization, user interactions, and the design
-                of a scalable interface.
-              </p>
-              <dl class="spec">
-                <div><dt>Focus</dt><dd>React state management, CRUD logic, modular component structure</dd></div>
-                <div><dt>Goal</dt><dd>design a clear, scalable product interface close to a real application</dd></div>
-              </dl>
-              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li><li>React</li></ul>
-              <div class="row__acts">
-                <a class="btn btn--blue btn--sm" href="https://mini-crm-ten-beta.vercel.app/"
-                   target="_blank" rel="noopener noreferrer"
-                  >Launch demo<span class="vh"> for Mini CRM (opens in new tab)</span></a>
-                <a class="btn btn--sm" href="https://github.com/cyrilfassiau/mini-crm"
-                   target="_blank" rel="noopener noreferrer"
-                  >Source code<span class="vh"> for Mini CRM on GitHub (opens in new tab)</span></a>
-              </div>
-            </div>
-            <div class="row__media">
-              <img src="images/optimized/CRM.png" width="1200" height="610"
-                   loading="lazy" decoding="async" alt="Mini CRM interface: dashboard listing clients with their statuses" />
-            </div>
-          </li>
-
-          <li class="row row--major row--flip">
-            <p class="row__no" aria-hidden="true"></p>
-            <div class="row__text">
-              <h3 class="row__title">Weather App</h3>
-              <p class="row__desc">
-                Frontend application that fetches and displays weather data
-                from an external API. This project focuses on handling
-                asynchronous requests, processing data, and dynamically
-                updating the user interface.
-              </p>
-              <dl class="spec">
-                <div><dt>Focus</dt><dd>external API integration, asynchronous data handling, dynamic interface updates</dd></div>
-                <div><dt>Goal</dt><dd>strengthen my understanding of data flow and how an application connected to an external service works</dd></div>
-              </dl>
-              <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
-              <div class="row__acts">
-                <a class="btn btn--blue btn--sm" href="https://cyrilfassiau.github.io/weatherapp/"
-                   target="_blank" rel="noopener noreferrer"
-                  >Launch demo<span class="vh"> for Weather App (opens in new tab)</span></a>
-                <a class="btn btn--sm" href="https://github.com/cyrilfassiau/weatherapp"
-                   target="_blank" rel="noopener noreferrer"
-                  >Source code<span class="vh"> for Weather App on GitHub (opens in new tab)</span></a>
-              </div>
-            </div>
-            <div class="row__media">
-              <img src="images/optimized/weatherapp.jpg" width="1200" height="756"
-                   loading="lazy" decoding="async" alt="Weather App interface showing the current weather and forecast for a city" />
-            </div>
-          </li>
-        </ol>
+        <noscript>
+          <p class="index__note">
+            The project list needs JavaScript. You can browse everything on
+            <a href="https://github.com/cyrilfassiau" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          </p>
+        </noscript>
       </section>
 
-      
       <section class="reel" id="animation-3d" aria-labelledby="t-3d">
         <div class="index__head">
           <h2 class="struct" id="t-3d">3D Modeling and Animation</h2>
@@ -348,8 +270,7 @@ developer</h2>
           <p class="foot__h">Pages</p>
           <ul>
             <li><a href="#accueil">Home</a></li>
-            <li><a href="#sites-web">Websites</a></li>
-            <li><a href="#applications">Applications</a></li>
+            <li><a href="#travaux">Selected work</a></li>
             <li><a href="#a-propos">About me</a></li>
           </ul>
         </div>
