@@ -93,7 +93,7 @@ export default function Work() {
   const [tech, setTech] = useState("All");
   const [sort, setSort] = useState("featured");
 
-  // Derived state — recomputed only when a filter actually changes.
+  
   const shown = useMemo(() => {
     const out = PROJECTS.filter(
       (p) =>
@@ -137,8 +137,8 @@ export default function Work() {
       </div>
 
       {shown.length > 0 ? (
-        // Re-keying on the active filter remounts the list so the
-        // row entrance animation replays on every change.
+        
+        
         <ol className="rows" key={`${type}-${tech}-${sort}`}>
           {shown.map((p, i) => (
             <Row key={p.id} project={p} index={i} />

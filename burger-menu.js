@@ -107,13 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   syncInert();
 });
 
-/**
- * The grid draws itself in — the build's one authored motion moment.
- *
- * The rules are painted by default; this opts each list into drawing only when
- * motion is welcome, so a failed script or a reduced-motion preference leaves a
- * complete page rather than an invisible one.
- */
+
 document.addEventListener("DOMContentLoaded", function () {
   const lists = document.querySelectorAll(".rows");
   if (!lists.length) return;
