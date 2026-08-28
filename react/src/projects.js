@@ -54,7 +54,7 @@ export const PROJECTS = [
   },
   {
     id: "mini-crm",
-    title: "Mini CRM",
+    title: "Budget Tracker",
     type: "Application",
     major: true,
     desc:
