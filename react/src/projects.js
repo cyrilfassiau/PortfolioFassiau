@@ -58,21 +58,21 @@ export const PROJECTS = [
     type: "Application",
     major: true,
     desc:
-      "Frontend application built with React to reproduce the basics of a CRM system. This project focuses on state management, application logic, and modular component structure. It let me work on data organization, user interactions, and the design of a scalable interface.",
+      "Budget tracker application, demonstrating CRUD logic, with the use of React and Typescript. Contains multiple features like swappable data layers, schemas, search filters,...",
     spec: [
       { term: "Focus", detail: "React state management, CRUD logic, modular component structure" },
-      { term: "Goal", detail: "design a clear, scalable product interface close to a real application" },
+      { term: "Goal", detail: "design a clear, scalable product interface close to a real application that is usable everyday" },
     ],
-    tags: ["HTML", "CSS", "JS", "React"],
+    tags: ["HTML", "CSS", "Typescript", "React"],
     image: {
       src: "images/optimized/CRM.png",
       width: 1200,
       height: 610,
-      alt: "Mini CRM interface: dashboard listing clients with their statuses",
+      alt: "Budget tracker",
     },
     links: [
-      { label: "Launch demo", href: "https://mini-crm-ten-beta.vercel.app/", primary: true },
-      { label: "Source code", href: "https://github.com/cyrilfassiau/mini-crm" },
+      { label: "Launch demo", href: "https://budget-tracker-fassiau.netlify.app/", primary: true },
+      { label: "Source code", href: "https://github.com/cyrilfassiau/budget-tracker" },
     ],
   },
   {
@@ -86,7 +86,7 @@ export const PROJECTS = [
       { term: "Focus", detail: "external API integration, asynchronous data handling, dynamic interface updates" },
       { term: "Goal", detail: "strengthen my understanding of data flow and how an application connected to an external service works" },
     ],
-    tags: ["HTML", "CSS", "JS"],
+    tags: ["HTML", "CSS", "JS", "React"],
     image: {
       src: "images/optimized/weatherapp.jpg",
       width: 1200,
@@ -94,7 +94,7 @@ export const PROJECTS = [
       alt: "Weather App interface showing the current weather and forecast for a city",
     },
     links: [
-      { label: "Launch demo", href: "https://cyrilfassiau.github.io/weatherapp/", primary: true },
+      { label: "Launch demo", href: "https://weather-app-fassiau.netlify.app/", primary: true },
       { label: "Source code", href: "https://github.com/cyrilfassiau/weatherapp" },
     ],
   },
