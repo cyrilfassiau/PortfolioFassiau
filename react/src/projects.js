@@ -16,7 +16,11 @@ export const PROJECTS = [
       alt: "Homepage of the Fassiau Polymer Consulting site, presenting the consultant and his thermoplastics services",
     },
     links: [
-      { label: "View site", href: "https://www.fassiaupolymerconsulting.com", primary: true },
+      {
+        label: "View site",
+        href: "https://www.fassiaupolymerconsulting.com",
+        primary: true,
+      },
     ],
   },
   {
@@ -32,15 +36,18 @@ export const PROJECTS = [
       alt: "Homepage of the Evasia site, a Bali travel agency, featuring a photo of terraced rice fields",
     },
     links: [
-      { label: "View site", href: "https://evasiatravel.netlify.app/", primary: true },
+      {
+        label: "View site",
+        href: "https://evasiatravel.netlify.app/",
+        primary: true,
+      },
     ],
   },
   {
     id: "saas-landing",
     title: "SaaS landing page",
     type: "Website",
-    desc:
-      "Landing page for an invoicing SaaS aimed at freelancers and small businesses (fictional product).",
+    desc: "Landing page for an invoicing SaaS aimed at freelancers and small businesses (fictional product).",
     tags: ["HTML", "CSS", "JS"],
     image: {
       src: "images/optimized/booki_website.jpg",
@@ -49,7 +56,11 @@ export const PROJECTS = [
       alt: "Landing page for an invoicing SaaS, showing a screenshot of the application interface",
     },
     links: [
-      { label: "View site", href: "https://saas-react-4y5s.vercel.app/", primary: true },
+      {
+        label: "View site",
+        href: "https://saas-react-4y5s.vercel.app/",
+        primary: true,
+      },
     ],
   },
   {
@@ -57,11 +68,18 @@ export const PROJECTS = [
     title: "Budget Tracker",
     type: "Application",
     major: true,
-    desc:
-      "Budget tracker application, demonstrating CRUD logic, with the use of React and Typescript. Contains multiple features like swappable data layers, schemas, search filters,...",
+    desc: "Budget tracker application, demonstrating CRUD logic, with the use of React and Typescript. Contains multiple features like swappable data layers, schemas, search filters,...",
     spec: [
-      { term: "Focus", detail: "React state management, CRUD logic, modular component structure" },
-      { term: "Goal", detail: "design a clear, scalable product interface close to a real application that is usable everyday" },
+      {
+        term: "Focus",
+        detail:
+          "React state management, CRUD logic, modular component structure",
+      },
+      {
+        term: "Goal",
+        detail:
+          "design a clear, scalable product interface close to a real application that is usable everyday",
+      },
     ],
     tags: ["HTML", "CSS", "Typescript", "React"],
     image: {
@@ -71,8 +89,11 @@ export const PROJECTS = [
       alt: "Budget tracker",
     },
     links: [
-      { label: "Launch demo", href: "https://budget-tracker-fassiau.netlify.app/", primary: true },
-      { label: "Source code", href: "https://github.com/cyrilfassiau/budget-tracker" },
+      {
+        label: "Launch demo",
+        href: "https://budget-tracker-fassiau.netlify.app/",
+        primary: true,
+      },
     ],
   },
   {
@@ -80,11 +101,18 @@ export const PROJECTS = [
     title: "Weather App",
     type: "Application",
     major: true,
-    desc:
-      "Frontend application that fetches and displays weather data from an external API. This project focuses on handling asynchronous requests, processing data, and dynamically updating the user interface.",
+    desc: "Frontend application that fetches and displays weather data from an external API. This project focuses on handling asynchronous requests, processing data, and dynamically updating the user interface.",
     spec: [
-      { term: "Focus", detail: "external API integration, asynchronous data handling, dynamic interface updates" },
-      { term: "Goal", detail: "strengthen my understanding of data flow and how an application connected to an external service works" },
+      {
+        term: "Focus",
+        detail:
+          "external API integration, asynchronous data handling, dynamic interface updates",
+      },
+      {
+        term: "Goal",
+        detail:
+          "strengthen my understanding of data flow and how an application connected to an external service works",
+      },
     ],
     tags: ["HTML", "CSS", "JS", "React"],
     image: {
@@ -94,8 +122,11 @@ export const PROJECTS = [
       alt: "Weather App interface showing the current weather and forecast for a city",
     },
     links: [
-      { label: "Launch demo", href: "https://weather-app-fassiau.netlify.app/", primary: true },
-      { label: "Source code", href: "https://github.com/cyrilfassiau/weatherapp" },
+      {
+        label: "Launch demo",
+        href: "https://weather-app-fassiau.netlify.app/",
+        primary: true,
+      },
     ],
   },
 ];
@@ -104,7 +135,7 @@ export const TYPES = ["All", "Website", "Application"];
 
 // Derived from the data so a new tag never needs registering by hand.
 export const TECHS = ["All"].concat(
-  [...new Set(PROJECTS.flatMap((p) => p.tags))].sort()
+  [...new Set(PROJECTS.flatMap((p) => p.tags))].sort(),
 );
 
 export const SORTS = [
