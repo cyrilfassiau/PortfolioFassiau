@@ -64,29 +64,29 @@ export const PROJECTS = [
     ],
   },
   {
-    id: "mini-crm",
-    title: "Budget Tracker",
+    id: "cyclingstats",
+    title: "Cyclingstats",
     type: "Application",
     major: true,
-    desc: "Budget tracker application, demonstrating CRUD logic, with the use of React and Typescript. Contains multiple features like swappable data layers, schemas, search filters,...",
+    desc: "Cycling dashboard built around the 2026 Tour de France and my own rides, demonstrating API consumption, state management and a complex UI, with the use of React and Typescript. Contains multiple features like linked charts, a rider comparator, filters stored in the URL, GPX and FIT file import with a map, weather data,...",
     spec: [
       {
         term: "Focus",
         detail:
-          "React state management, CRUD logic, modular component structure",
+          "API consumption with caching, state management (server state, URL state, persisted UI state), linked charts and in-browser GPX/FIT parsing",
       },
       {
         term: "Goal",
         detail:
-          "design a clear, scalable product interface close to a real application that is usable everyday",
+          "build a data-heavy, accessible and responsive dashboard that turns raw race data and my own ride files into something clear to explore",
       },
     ],
-    tags: ["HTML", "CSS", "Typescript", "React"],
+    tags: ["HTML", "CSS", "Typescript", "React", "TanStack Query"],
     image: {
       src: "images/optimized/CRM.png",
       width: 1200,
       height: 610,
-      alt: "Budget tracker",
+      alt: "Cyclingstats dashboard",
     },
     links: [
       {
