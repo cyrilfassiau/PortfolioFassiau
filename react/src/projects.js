@@ -44,21 +44,21 @@ export const PROJECTS = [
     ],
   },
   {
-    id: "saas-landing",
-    title: "SaaS landing page",
+    id: "fassiau-dev",
+    title: "Fassiau Dev website",
     type: "Website",
-    desc: "Landing page for an invoicing SaaS aimed at freelancers and small businesses (fictional product).",
-    tags: ["HTML", "CSS", "JS"],
+    desc: "My own website for my freelance activity as a web developer",
+    tags: ["HTML", "CSS", "JS", "React"],
     image: {
-      src: "images/optimized/booki_website.jpg",
+      src: "images/fassiaudev.jpg",
       width: 720,
       height: 558,
-      alt: "Landing page for an invoicing SaaS, showing a screenshot of the application interface",
+      alt: "My own website for my freelance activity as a web developer",
     },
     links: [
       {
         label: "View site",
-        href: "https://saas-react-4y5s.vercel.app/",
+        href: "https://fassiau-dev.com/",
         primary: true,
       },
     ],
@@ -83,7 +83,7 @@ export const PROJECTS = [
     ],
     tags: ["HTML", "CSS", "Typescript", "React", "TanStack Query"],
     image: {
-      src: "images/optimized/CRM.png",
+      src: "images/cyclingstats_app.png",
       width: 1200,
       height: 610,
       alt: "Cyclingstats dashboard",
