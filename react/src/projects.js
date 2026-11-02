@@ -83,7 +83,7 @@ export const PROJECTS = [
     ],
     tags: ["HTML", "CSS", "Typescript", "React", "TanStack Query"],
     image: {
-      src: "images/cyclingstats_app.png",
+      src: "images/cyclingstats_app.jpg",
       width: 1200,
       height: 610,
       alt: "Cyclingstats dashboard",
