@@ -91,7 +91,7 @@ export const PROJECTS = [
     links: [
       {
         label: "Launch demo",
-        href: "https://budget-tracker-fassiau.netlify.app/",
+        href: "https://mytdfcyclingstats.fassiau-dev.com",
         primary: true,
       },
     ],
